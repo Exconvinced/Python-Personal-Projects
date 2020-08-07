@@ -27,7 +27,7 @@ Features:
 > * Password length: Can be increased or decreased using the [+] and [-], respectively. Minimum value is 1.
 > * Live password generation: a new password is generated whenever the the password length or preference is changed.
 > * Toggles: A tickbox appears filled whenever its preference is activated. Displays its associated keyboard key when deactivated.
-> * No scrolling: The screen stays in place thanks to the clear function invoked every loop.
+> * No scrolling: The screen stays in place thanks to the clear function invoked at every loop.
 
 For improvement:
 > * Encrypted password/credentials vault
