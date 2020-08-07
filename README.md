@@ -7,8 +7,13 @@ Features:
 > * Another round: No need to re-run the code to play another round.
 > * Faster moves: No need to press Enter to send a move. 'msvcrt' module is used.
 
+Updates: 
+`August 07 2020`
+> * Added clear screen function to avoid jumping of texts and elements on screen `Aug 7 2020`.
+> * Updated prompt and system messages.
+> * Added few \n whitespaces to separate promt messages from system messages.
+
 For improvement:
-> * Use clear screen function to keep the interface in place
 > * Custom control mappings
 > * Custom puck displays (Default is 'X' vs 'O')
 > * New board unicode designs
