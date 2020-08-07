@@ -8,10 +8,11 @@ Features:
 > * Faster moves: No need to press Enter to send a move. 'msvcrt' module is used.
 
 Updates: 
+
 `August 07 2020`
 > * Added clear screen function to avoid jumping of texts and elements on screen.
 > * Updated prompt and system messages.
-> * Added few \n whitespaces to separate promt messages from system messages.
+> * Added few `\n` whitespaces to separate promt messages from system messages.
 
 For improvement:
 > * Custom control mappings
@@ -22,7 +23,7 @@ For improvement:
 
 ## 2. Random Password Generator
 Features: 
-> * Password preference: Allows the user to include or exclude alphabet, numeric or puctuation characters before generating.
+> * Password preference: Allows the user to include or exclude alphabet, numeric or punctuation characters before generating.
 > * Password length: Can be increased or decreased using the [+] and [-], respectively. Minimum value is 1.
 > * Live password generation: a new password is generated whenever the the password length or preference is changed.
 > * Toggles: A tickbox appears filled whenever its preference is activated. Displays its associated keyboard key when deactivated.
