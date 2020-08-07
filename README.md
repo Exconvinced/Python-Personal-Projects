@@ -9,7 +9,7 @@ Features:
 
 Updates: 
 `August 07 2020`
-> * Added clear screen function to avoid jumping of texts and elements on screen `Aug 7 2020`.
+> * Added clear screen function to avoid jumping of texts and elements on screen.
 > * Updated prompt and system messages.
 > * Added few \n whitespaces to separate promt messages from system messages.
 
