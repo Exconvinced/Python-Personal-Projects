@@ -1,3 +1,4 @@
+from os import system, name
 import msvcrt
 import random
 
@@ -28,6 +29,15 @@ numBoard = [
     "1", "2", "3"
 ]
 
+
+# a clear screen command invoker
+def clear():
+    if name == "nt":
+        _ = system("cls")
+    else:
+        _ = system("clear")
+
+
 # board with numpad labels. only used once per game
 def printNumBoard():
     row_1, row_2, row_3 = [], [], []
@@ -46,6 +56,7 @@ def printNumBoard():
         " ║ ".join(row_3),
         "\n",
     )
+
 
 # board with updated cells. always used at every turn
 def printBoard():
@@ -66,10 +77,12 @@ def printBoard():
         "\n",
     )
 
+
 # used to clear the board
 def resetBoard():
     for i in range(len(board)):
         board[i] = emptyCell
+
 
 # creates a list of all the board rows
 def getBoardRows():
@@ -79,6 +92,7 @@ def getBoardRows():
     boardRows[2].extend([board[6], board[7], board[8]])
     return boardRows
 
+
 # creates a list of all the board columns
 def getBoardCols():
     boardCols = [[], [], []]
@@ -87,6 +101,7 @@ def getBoardCols():
     boardCols[2].extend([board[2], board[5], board[8]])
     return boardCols
 
+
 # creates a list of all the board diagonals
 def getBoardDiag():
     boardDiag = [[], []]
@@ -94,13 +109,16 @@ def getBoardDiag():
     boardDiag[1].extend([board[2], board[4], board[6]])
     return boardDiag
 
+
 # checks whether the player attempts to place a move over a filled cell
 def checkMoveValidity(boardCell):
     if board[boardCell] != emptyCell:
+        clear()
         print("Invalid move! Cell is already filled!")
         return False
     else:
         return True
+
 
 # reads player numpad input
 def askPlayerInput(puck):
@@ -113,6 +131,7 @@ def askPlayerInput(puck):
             break
         else:
             printBoard()
+
 
 # gives the corresponding cell provided the numpad input
 def interpretPlayerInput(playerInput):
@@ -127,14 +146,17 @@ def genOpponentInput(puck):
             registerInput(randomCell, puck)
             break
 
+
 # places the valid move onto an empty cell
 def registerInput(boardCell, puck):
     board[boardCell] = puck
+    clear()
     if puck == playerPuck:
         print("Player moves!")
     else:
         print("Opponent moves!")
     printBoard()
+
 
 # scans the board for empty cells
 def checkBoardIfFilled():
@@ -143,12 +165,14 @@ def checkBoardIfFilled():
             return False
     return True
 
+
 # determines whether a row, column or diagonal contains only pucks
 def listEqualCells(boardList, puck):
     for box in boardList:
         if all(cell == puck for cell in box):
             return True
     return False
+
 
 # sends a list of rows to the listEqualCells function
 def checkBoardRows(puck):
@@ -158,6 +182,7 @@ def checkBoardRows(puck):
     else:
         return False
 
+
 # sends a list of columbns to the listEqualCells function
 def checkBoardCols(puck):
     boardCols = getBoardCols()
@@ -166,6 +191,7 @@ def checkBoardCols(puck):
     else:
         return False
 
+
 # sends a list of diagonals to the listEqualCells function
 def checkBoardDiag(puck):
     boardDiag = getBoardDiag()
@@ -173,6 +199,7 @@ def checkBoardDiag(puck):
         return True
     else:
         return False
+
 
 # the parent function of the previous three functions above
 def checkBoard(puck):
@@ -200,20 +227,22 @@ def player2Turn():
     puck = opponentPuck
     askPlayerInput(puck)
 
+
 # determines whether player 1 will play against a BOT or another player
 def askOpponentType():
     while True:
         print("Choose your opponent:  [1] BOT  [2] Player 2")
         opponent = int(msvcrt.getch())
-
+        clear()
         if opponent == 1:
-            print("Opponent: BOT")
+            print("Playing against: BOT")
             return opponent
         elif opponent == 2:
-            print("Opponent: Player 2")
+            print("Playing against: Player 2")
             return opponent
         else:
             print("\nInvalid opponent type! Try again!")
+
 
 # refers to the game history to ensure that the game turns alternate between the player and the opponent
 def getNextTurn(opponent):
@@ -224,6 +253,7 @@ def getNextTurn(opponent):
         gameHistory.append(0)
     return nextTurn
 
+
 # calls the next player to play, depending on the current nextTurn value
 def nextTurnManager(nextTurn):
     if nextTurn == 0:
@@ -233,9 +263,11 @@ def nextTurnManager(nextTurn):
     elif nextTurn == 2:
         player2Turn()
 
+
 # the main game program
 while True:
-    print("\n\nWelcome to TicTacToe!")
+    clear()
+    print("\n\nWelcome to TicTacToe!\n")
     opponent = askOpponentType()
     printNumBoard()
 
@@ -253,10 +285,11 @@ while True:
                 break
 
 
-    print("Want to play again?  [Enter] YES  [N] NO")
+    print("\n\nWant to play again?  [Enter] YES  [N] NO")
     promptPlayer = ord(msvcrt.getch())
     if promptPlayer == 110 or promptPlayer == 78: 
-        print('Thank you for playing!')
+        clear()
+        print('Thank you for playing Tic Tac Toe!')
         break
     else:
         resetBoard()
