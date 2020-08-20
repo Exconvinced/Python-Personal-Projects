@@ -1,4 +1,4 @@
-from os import system, name
+import os
 import msvcrt
 import random
 
@@ -32,10 +32,7 @@ numBoard = [
 
 # a clear screen command invoker
 def clear():
-    if name == "nt":
-        _ = system("cls")
-    else:
-        _ = system("clear")
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 # board with numpad labels. only used once per game
