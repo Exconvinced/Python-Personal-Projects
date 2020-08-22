@@ -1,4 +1,4 @@
-import msvcrt
+import getch
 from os import system, name
 import random
 
@@ -136,7 +136,7 @@ def clear():
 while True:
     clear()
     printmenu()
-    input = ord(msvcrt.getch())
+    input = ord(getch.getch())
     inputStatus = checkInput()
     if inputStatus:
         break
