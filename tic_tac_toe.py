@@ -1,5 +1,5 @@
 import os
-import msvcrt
+import getch
 import random
 
 
@@ -121,7 +121,7 @@ def checkMoveValidity(boardCell):
 def askPlayerInput(puck):
     while True:
         print(puck + "'s turn!\nUse Numpad keys to send your move:")
-        playerInput = int(msvcrt.getch())
+        playerInput = int(getch.getch())
         boardCell = interpretPlayerInput(playerInput)
         if checkMoveValidity(boardCell):
             registerInput(boardCell, puck)
@@ -229,7 +229,7 @@ def player2Turn():
 def askOpponentType():
     while True:
         print("Choose your opponent:  [1] BOT  [2] Player 2")
-        opponent = int(msvcrt.getch())
+        opponent = int(getch.getch())
         clear()
         if opponent == 1:
             print("Playing against: BOT")
@@ -283,7 +283,7 @@ while True:
 
 
     print("\n\nWant to play again?  [Enter] YES  [N] NO")
-    promptPlayer = ord(msvcrt.getch())
+    promptPlayer = ord(getch.getch())
     if promptPlayer == 110 or promptPlayer == 78: 
         clear()
         print('Thank you for playing Tic Tac Toe!')
