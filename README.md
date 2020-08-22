@@ -8,11 +8,10 @@ Features:
 > * Faster moves: No need to press Enter to send a move. 'msvcrt' module is used.
 
 Updates: 
-
-`August 07 2020`
 > * Added clear screen function to avoid jumping of texts and elements on screen.
 > * Updated prompt and system messages.
 > * Added few `\n` whitespaces to separate promt messages from system messages.
+> * Replaced msvcrt by getch module
 
 For improvement:
 > * Custom control mappings
@@ -28,6 +27,8 @@ Features:
 > * Live password generation: a new password is generated whenever the the password length or preference is changed.
 > * Toggles: A tickbox appears filled whenever its preference is activated. Displays its associated keyboard key when deactivated.
 > * No scrolling: The screen stays in place thanks to the clear function invoked at every loop.
+
+Update: Replaced msvcrt by getch module
 
 For improvement:
 > * Encrypted password/credentials vault
