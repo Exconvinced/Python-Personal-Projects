@@ -36,6 +36,17 @@ For improvement:
 > * Add send-to-email function
 > * Interface rearrangement
 
+## 3. Passphrase Strengthener
+Features: 
+> * Based on a Codewars training kata
+> * Translates a user's passphrase into an cryptographic-like string
+> * Aims to mask a phrase that is only known to the user
+
+For improvement:
+> * Add an interactive user interface
+> * Add export-to-file function
+> * Add send-to-email function
+
 # Upcoming Projects
 > * Rock, Papers, Scissors
 > * Euclidean Algorithm
