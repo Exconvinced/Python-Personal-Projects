@@ -12,7 +12,7 @@ charaGroups = [
     "abcdefghijklmnopqrstuvwxyz",           # lowercase
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ",           # uppercase
     "0123456789",                           # digits
-    "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~",    # punctuations
+    r"!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~",    # punctuations
 ]
 
 
@@ -70,7 +70,7 @@ def checkToggles():
 def generatePass():
     del passBase[:]
     del password[:]
-    for repeat in range(0, passLength[0]):
+    for _ in range(0, passLength[0]):
         randChar = random.randint(0, len(wholeCharaGroup[0]) - 1)
         passBase.append(wholeCharaGroup[0][randChar])
     password.append("".join(passBase))
